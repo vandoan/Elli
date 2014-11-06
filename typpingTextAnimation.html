@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+	<div id="myTypingText"></div>
+	<script type="text/javascript" language="javascript">
+		var myString="Place your string data here";
+		var myArray=myString.split("");
+		var loopTimer;
+		function frameLooper(){
+			if(myArray.length > 0){
+				document.getElementById("myTypingText").innerHTML+=myArray.shift();
+			}else{
+				clearTimeout(loopTimer);
+			}
+			loopTimer=setTimeout('frameLooper()',70);
+		}
+		frameLooper();
+	</script>
+</body>
+</html>
