@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+<style type="text/css">
+#myTV {
+	background-image:url(pic4.jpg);
+	width:269px;
+	height:164px;
+	padding-top:20px;
+}
+#myScreen {width:228px; height:128px; margin-left:21px;
+}
+</style>
+</head>
+<body>
+	<div id="myTV"><div id="myScreen"></div></div>
+	<script type="text/javascript">
+	var myScreen = document.getElementById('myScreen');
+	var myPics = ['pic1.jpg','pic2.jpg','pic3.jpg'];
+	var totalPics = myPics.length;
+	var i = 0; 
+	function loop() {
+		if(i > (totalPics - 1)){
+			i = 0;
+		}
+		myScreen.innerHTML = '<img src="'+myPics[i]+'">';
+		i++;
+		loopTimer = setTimeout('loop()',3000);
+	}
+	loop();
+	</script>
+	</body>
+	</html>
