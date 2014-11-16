@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+	div.boxes {
+		position: absolute;
+		top: 50px;
+		width: 260px;
+		height: 260px;
+		background: coral;
+		padding: 20px;
+		display: none;
+	}
+	div#box1 {
+	}
+	div#box2 {
+		left: 330px;
+	}
+	div#box3 {
+		left: 650px;
+	}
+</style>
+<script type="text/javascript">
+	var boxArray = ['box1', 'box2', 'box3'];
+	window.addEventListener('mouseup', function(event){
+		for(var i=0; i < boxArray.length; i++){
+		var box = document.getElementById(boxArray[i]);
+			if(event.target != box && event.target.parentNode != box) {
+			box.style.display='none';
+			}
+		}
+	});
+
+</script>
+</head>
+<body>
+	<div id="box1" class="boxes">
+		<h2>Pop out interface 1</h2>
+	</div>
+	<button onclick="document.getElementById('box1').style.display='block'">Pop-Out Interface</button>
+		<div id="box2" class="boxes">
+		<h2>Pop out interface 2</h2>
+	</div>
+	<button onclick="document.getElementById('box2').style.display='block'">Pop-Out Interface</button>
+	<div id="box3" class="boxes">
+		<h2>Pop out interface 3</h2>
+	</div>
+	<button onclick="document.getElementById('box3').style.display='block'">Pop-Out Interface</button>
+	<h2>Page content...</h2>
+	<h2>More page conent...</h2>
+</body>
+</html>
