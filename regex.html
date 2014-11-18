@@ -1,0 +1,12 @@
+<script type="text/javascript">
+// Real Time Text Filtering function (while user types)
+// Written by Adam Khoury @ www.developphp.com
+function clean(e){
+	var textfield = document.getElementById(e);
+	var regex = /[^a-z 0-9?!.,]/gi;
+	if(textfield.value.search(regex) > -1) {
+		textfield.value = textfield.value.replace(regex, "");
+    }
+}
+</script>
+<textarea id="ta" name="ta" onkeyup="clean('ta')" onkeydown="clean('ta')"></textarea>
